@@ -7,11 +7,12 @@ const Beer = function (url1, url2) {
   this.allBeers = [];
 } ;
 
-// Beer.prototype.bindEvents = function () {
-//   PubSub.subcribe( 'click', callbackfunc)
-//   this.getData()
-//   this.sendData
-// };
+Beer.prototype.bindEvents = function () {
+  this.getData();
+  PubSub.subcribe('FormView:click', (event) => {
+    this.sendData();
+  });
+};
 
 Beer.prototype.getData = function () {
   const allUrls = this.getUrlList(this.url1, this.url2);
@@ -21,7 +22,7 @@ Beer.prototype.getData = function () {
   }))
   .then( (data) => {
     this.allBeers = data.flat(1);
-    console.log("flattenedarrays", this.allBeers);
+    console.log("flattenedarrays:", this.allBeers);
     this.getRandomBeer();
   });
 };
@@ -40,7 +41,7 @@ Beer.prototype.getRandomInt = function () {
 Beer.prototype.getRandomBeer = function () {
   const theRandomInt = this.getRandomInt();
   this.allBeers[theRandomInt];
-  console.log(theRandomInt);
+  console.log("random beer object",this.allBeers[theRandomInt]);
 };
 
 Beer.prototype.getUrlList = function (url1, url2) {
