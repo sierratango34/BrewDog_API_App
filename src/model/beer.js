@@ -8,7 +8,8 @@ const Beer = function (url1, url2) {
 } ;
 
 // Beer.prototype.bindEvents = function () {
-//   PubSub.subcribe( 'click', callback)
+//   PubSub.subcribe( 'click', callbackfunc)
+//   this.getData()
 //   this.sendData
 // };
 
