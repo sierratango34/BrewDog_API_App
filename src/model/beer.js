@@ -5,13 +5,17 @@ const Beer = function (url1, url2) {
   this.url1 = url1;
   this.url2 = url2;
   this.allBeers = [];
+  this.aRandomBeer = null;
 } ;
 
 Beer.prototype.bindEvents = function () {
-  this.getData();
-  PubSub.subcribe('FormView:click', (event) => {
+  const allTheBeer = this.getData();
+  console.log("ehehehe",allTheBeer);
+
+  PubSub.subscribe('FormView:click', (event) => {
     this.sendData();
   });
+
 };
 
 Beer.prototype.getData = function () {
@@ -22,26 +26,28 @@ Beer.prototype.getData = function () {
   }))
   .then( (data) => {
     this.allBeers = data.flat(1);
-    console.log("flattenedarrays:", this.allBeers);
-    this.getRandomBeer();
+    console.log("Flattened Array of All Beers:", this.allBeers);
+    this.aRandomBeer = this.getRandomBeer(this.allBeers)
   });
+  return this.aRandomBeer;
 };
 
 Beer.prototype.sendData = function () {
-  const randomBeer = this.allBeers.getRandomBeer();
+  const randomBeer = this.getRandomBeer();
+  console.log("Random Beer Being Broadcast",randomBeer);
   PubSub.publish('Beer:random-beer-selected', randomBeer)
+};
+
+Beer.prototype.getRandomBeer = function (allBeers) {
+  const theRandomInt = this.getRandomInt();
+  const randomBeerObject = allBeers[theRandomInt];
+  console.log("A Random Beer:", randomBeerObject);
 };
 
 Beer.prototype.getRandomInt = function () {
   min = 0;
   max = 326;
   return Math.ceil(Math.floor(Math.random() * (max - min)) + min);
-};
-
-Beer.prototype.getRandomBeer = function () {
-  const theRandomInt = this.getRandomInt();
-  this.allBeers[theRandomInt];
-  console.log("random beer object",this.allBeers[theRandomInt]);
 };
 
 Beer.prototype.getUrlList = function (url1, url2) {
@@ -52,7 +58,5 @@ Beer.prototype.getUrlList = function (url1, url2) {
   };
   return urlList;
 };
-
-
 
 module.exports = Beer;
