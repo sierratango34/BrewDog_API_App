@@ -6,7 +6,9 @@ const FormView = function(){
 
 FormView.prototype.bindEvents = function () {
   const form = document.querySelector('#submit-form');
-  form.addEventListener('submit', (event) => {} );
+  form.addEventListener('submit', (event) => {
+    PubSub.publish('FormView:submit', event);
+  } );
 };
 
 module.exports = FormView;
