@@ -1,6 +1,6 @@
-/* * {
+* {
   border: 1px solid red;
-} */
+}
 
 html {
   margin: 0;
@@ -48,6 +48,18 @@ li {
   margin: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
 .beer-pics {
   height: 40vh;
   width: auto;
@@ -55,13 +67,29 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
+.middle-title {
+  color: white;
+  padding: 0;
+  font-size: 8vh;
+  margin: 0
+}
 
 #display-result-beer {
   padding: 50px;
 }
 
 #page-title-wrapper {
-  color: white;
+  background-color: black;
+  font-color: white;
+  display: inline-block;
+  position: static;
+  margin: 0 auto;
+  width: 100vw;
+  /* margin-top: px; */
+  padding: 10px;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
 }
 
 #header {
@@ -103,6 +131,40 @@ input[type=submit] {
 
 #submit-form {
   text-align: center;
+}
+
+/* #blue-box:hover {
+  background-color: black;
+} */
+
+#find-out-more {
+  padding: 10px;
+  border-style: none;
+  font-size: 26px;
+  background-color: #00aedb;
+  font-family: 'Pathway Gothic One', sans-serif;
+  /* font-weight: 600; */
+  letter-spacing: 2px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  /* margin-left: 43%; */
+}
+
+#find-out-more:hover {
+  background-color: black;
+  color: white;
+  animation: pulse 4s infinite;
+}
+
+#find-out-link {
+  /* padding: 10px; */
+}
+
+#find {
+  right: 0;
+  left:0;
+  margin: 0;
 }
 
 .beer-pics {
