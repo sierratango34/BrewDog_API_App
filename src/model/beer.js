@@ -8,9 +8,10 @@ const Beer = function (url1, url2) {
 } ;
 
 Beer.prototype.bindEvents = function () {
+  
   const allTheBeer = this.getData()
   console.log("this is all the beer:",allTheBeer);
-  PubSub.subscribe('FormView:submit', (event) => {
+  PubSub.subscribe('FormView:submit', () => {
     // const randomBeer = this.getRandomBeer(this.allBeers);
     // console.log(this.allBeers);
     this.sendData(randomBeer);
