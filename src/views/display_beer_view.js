@@ -14,6 +14,7 @@ DisplayBeerView.prototype.bindEvents = function () {
 DisplayBeerView.prototype.render = function (beer) {
   const img = document.createElement('img');
   if (beer.image_url != null) {
+    img.classList.add('beer-pics');
     img.src = beer.image_url;
   };
   this.container.appendChild(img);

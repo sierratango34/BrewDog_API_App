@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // beer.bindEvents();
   beer.getData();
 
-  // const formView = new FormView();
-  // formView.bindEvents();
+  const formView = new FormView();
+  formView.bindEvents();
 
   const whereBeerViewGoes = document.querySelector('#display-result-beer')
   const displayBeerView = new DisplayBeerView(whereBeerViewGoes);

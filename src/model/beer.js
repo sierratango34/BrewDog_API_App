@@ -7,12 +7,15 @@ const Beer = function (url1, url2) {
   this.allBeers = [];
 } ;
 
-// Beer.prototype.bindEvents = function () {
-//   const allTheBeer = this.getData()
-//   PubSub.subscribe('FormView:submit', (event) => {
-//
-//   });
-// };
+Beer.prototype.bindEvents = function () {
+  const allTheBeer = this.getData()
+  console.log("this is all the beer:",allTheBeer);
+  PubSub.subscribe('FormView:submit', (event) => {
+    // const randomBeer = this.getRandomBeer(this.allBeers);
+    // console.log(this.allBeers);
+    this.sendData(randomBeer);
+  });
+};
 
 Beer.prototype.getData = function () {
   const allUrls = this.getUrlList(this.url1, this.url2);
@@ -25,15 +28,15 @@ Beer.prototype.getData = function () {
     const allBeers = this.allBeers;
     console.log("Flattened Array of All Beers:", allBeers);
     const aRandomBeer = this.getRandomBeer(allBeers);
-    // console.log("A random beer", aRandomBeer);
   });
+  // return this.allBeers;
 };
 
-// Beer.prototype.sendData = function (data) {
-//   const randomBeer = this.getRandomBeer(data);
-//   console.log("Random Beer Being Broadcast",randomBeer);
-//   PubSub.publish('Beer:random-beer-selected', randomBeer)
-// };
+Beer.prototype.sendData = function (data) {
+  const randomBeer = this.getRandomBeer(data);
+  console.log("Random Beer Being Broadcast",randomBeer);
+  PubSub.publish('Beer:random-beer-selected', randomBeer)
+};
 
 Beer.prototype.getRandomBeer = function (allBeers) {
   const theRandomInt = this.getRandomInt();

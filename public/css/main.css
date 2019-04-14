@@ -1,0 +1,110 @@
+/* * {
+  border: 1px solid red;
+} */
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #efefe9;
+  font-family: 'Raleway', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-align: center;
+  font-size: 48px;
+  padding-top: 35px;
+}
+
+h2 {
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-align: center;
+}
+
+nav {
+  color: white;
+  /* font-style: bold; */
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  width: 75vw;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 20px;
+  padding: 0;
+  /* height: 80px; */
+  /* width: 75vw; */
+}
+
+li {
+  margin: 10px;
+}
+
+.beer-pics {
+  height: 40vh;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#display-result-beer {
+  padding: 50px;
+}
+
+#page-title-wrapper {
+  color: white;
+}
+
+#header {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  background-color: black;
+  height: 80px;
+  width: 100vw;
+  padding: 0;
+  border: 0;
+  position: fixed;
+  margin: 0;
+  top: 0;
+  position: sticky;
+}
+
+#brewdog-logo {
+  height: 50px;
+  width: auto;
+  margin: 0 15px;
+}
+
+#main-slider {
+  margin-top: auto;
+  width: 100%;
+  height: auto;
+
+}
+
+input[type=submit] {
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  font-size: 16px;
+
+}
+
+#submit-form {
+  text-align: center;
+}
+
+.beer-pics {
+  align-content: center;
+}
