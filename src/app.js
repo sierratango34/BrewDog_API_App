@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   beer.bindEvents();
   // const aRandomBeer = beer.getData();
   // PubSub.publish('Beer:random-beer-selected', aRandomBeer);
+
   const button = document.querySelector('#button')
   const formView = new FormView(button);
   formView.bindEvents();
