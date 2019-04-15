@@ -40,7 +40,7 @@ Beer.prototype.getData = function () {
 //   console.log("Random Beer Being Broadcast",randomBeer);
 //   PubSub.publish('Beer:random-beer-selected', randomBeer)
 // };
-//^ this function seemed redundant. when uncommented and uncomment line 18, i get the model working but it errors?
+//^ this function seemed redundant. when uncommented and uncomment line 18, i get the model working but it errors? Am I performing .getRandomBeer at the wrong points or too many times???
 
 Beer.prototype.getRandomBeer = function (allBeers) {
   const theRandomInt = this.getRandomInt();
