@@ -9,8 +9,10 @@ const Beer = function (url1, url2) {
 
 Beer.prototype.bindEvents = function () {
   const allBeers = this.getData()
+  console.log("aoishdioasd",allBeers);
   console.log("this is all the beer:", allBeers);
   PubSub.subscribe('FormView:submit', () => {
+    // console.log("all beers tho", this.allBeers);
     const randomBeer = this.getRandomBeer(this.allBeers);
     // console.log(this.allBeers);
     // this.sendData(randomBeer);
@@ -29,8 +31,8 @@ Beer.prototype.getData = function () {
     const allBeers = this.allBeers;
     console.log("Flattened Array of All Beers:", allBeers);
     const aRandomBeer = this.getRandomBeer(allBeers);
+    return aRandomBeer;
   });
-  return this.allBeers;
 };
 
 // Beer.prototype.sendData = function (data) {
@@ -38,6 +40,7 @@ Beer.prototype.getData = function () {
 //   console.log("Random Beer Being Broadcast",randomBeer);
 //   PubSub.publish('Beer:random-beer-selected', randomBeer)
 // };
+//^ this function seemed redundant. when uncommented and uncomment line 18, i get the model working but it errors?
 
 Beer.prototype.getRandomBeer = function (allBeers) {
   const theRandomInt = this.getRandomInt();

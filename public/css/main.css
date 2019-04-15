@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 
 html {
   margin: 0;
@@ -119,6 +119,10 @@ a:visited {
   height: auto;
 
 }
+
+/* #centre {
+  background-image: 'pictures/efp6_featured_2.jpg';
+} */
 
 input[type=submit] {
   padding: 10px;
