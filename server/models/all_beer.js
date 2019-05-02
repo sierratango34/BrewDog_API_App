@@ -15,18 +15,18 @@ AllBeer.prototype.getData = function() {
       return request.get();
     })
   ).then(responses => {
-    this.allBeers = responses.map(response => {
-      return response.data.map(beer => {
-        return beer;
-      });
-    });
-    this.allBeers = this.allBeers.flat(1);
+    this.allBeers = responses
+      .map(response => {
+        return response.data.map(beer => {
+          return beer;
+        });
+      })
+      .flat(1);
   });
 };
 
 AllBeer.prototype.getRandomBeer = function() {
-  const theRandomInt = this.getRandomInt();
-  return this.allBeers[theRandomInt];
+  return this.allBeers[this.getRandomInt()];
 };
 
 AllBeer.prototype.getRandomInt = function() {

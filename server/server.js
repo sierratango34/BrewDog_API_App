@@ -13,7 +13,6 @@ app.use(express.static(publicPath));
 
 app.use("/api/random-beer", (req, res) => {
   const randomBeer = beer.getRandomBeer();
-  console.log(randomBeer);
   res.send(beer.getRandomBeer());
 });
 

@@ -22,32 +22,17 @@ DisplayBeerView.prototype.render = function(beer) {
   this.container.appendChild(img);
 
   const heading = this.createTextElement("h2", beer.name);
-  // const heading = document.createElement('h3');
-  // heading.textContent = beer.name;
-  // this.container.appendChild(heading);
 
   const tagline = this.createTextElement("h4", beer.tagline);
-  // const tagline = document.createElement('h4');
-  // tagline.textContent = beer.tagline;
-  // this.container.appendChild(tagline);
 
   const abv = this.createTextElement("h4", `ABV: ${beer.abv}%`);
-  // const abv = document.createElement('h4');
-  // abv.textContent = `ABV: ${beer.abv}%`;
-  // this.container.appendChild(abv);
 
   const firstBrewed = this.createTextElement(
     "h4",
     `First Brewed: ${beer.first_brewed}`
   );
-  // const firstBrewed = document.createElement('h4')
-  // firstBrewed.textContent = `First Brewed: ${beer.first_brewed}`;
-  // this.container.appendChild(firstBrewed);
 
   const description = this.createTextElement("p", beer.description);
-  // const description = document.createElement('p');
-  // description.textContent = beer.description;
-  // this.container.appendChild(description);
 
   const foodPairingHead = document.createElement("h4");
   foodPairingHead.classList.add("food-pairing");
