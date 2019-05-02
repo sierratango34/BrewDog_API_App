@@ -11,7 +11,7 @@ const beer = new AllBeer(
 const publicPath = path.join(__dirname, "../public");
 app.use(express.static(publicPath));
 
-app.use("/api/random", (req, res) => {
+app.use("/api/random-beer", (req, res) => {
   const randomBeer = beer.getRandomBeer();
   console.log(randomBeer);
   res.send(beer.getRandomBeer());
