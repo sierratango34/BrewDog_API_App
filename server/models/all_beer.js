@@ -14,15 +14,19 @@ AllBeer.prototype.getData = function() {
       const request = new RequestHelper(url);
       return request.get();
     })
-  ).then(responses => {
-    this.allBeers = responses
-      .map(response => {
-        return response.data.map(beer => {
-          return beer;
-        });
-      })
-      .flat(1);
-  });
+  )
+    .then(responses => {
+      this.allBeers = responses
+        .map(response => {
+          return response.data.map(beer => {
+            return beer;
+          });
+        })
+        .flat(1);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 AllBeer.prototype.getRandomBeer = function() {
