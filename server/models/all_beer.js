@@ -16,13 +16,11 @@ AllBeer.prototype.getData = function() {
     })
   )
     .then(responses => {
-      this.allBeers = responses
-        .map(response => {
-          return response.data.map(beer => {
-            return beer;
-          });
-        })
-        .flat(1);
+      this.allBeers = responses.flatMap(response => {
+        return response.data.map(beer => {
+          return beer;
+        });
+      });
     })
     .catch(err => {
       console.log(err);
