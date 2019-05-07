@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const port = process.env.PORT || 8080;
 const AllBeer = require("./models/all_beer.js");
 
 const beer = new AllBeer(
@@ -20,6 +21,6 @@ app.use("", function(req, res) {
   res.send();
 });
 
-app.listen(3000, function() {
-  console.log(`Listening on port ${this.address().port}`);
+app.listen(port, function() {
+  console.log(`Listening on port ${port}`);
 });
