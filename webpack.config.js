@@ -1,10 +1,10 @@
 const config = {
-  entry: `${ __dirname }/src/app.js`,
+  entry: `${__dirname}/client/src/app.js`,
   output: {
-    filename: 'bundle.js',
-    path: `${ __dirname }/public/js`
+    filename: "bundle.js",
+    path: `${__dirname}/public/js`
   },
-  mode: 'development'
+  mode: "development"
 };
 
 module.exports = config;
