@@ -98,3 +98,7 @@ input[type="submit"] {
 #favicon {
   font-size: 6px;
 }
+
+footer {
+  position: sticky;
+}
